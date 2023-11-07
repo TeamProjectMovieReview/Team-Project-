@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="locationInput" placeholder="Enter your location">
+        <button id="fetchWeatherBtn">Get Weather</button>
+        <div id="weatherDisplay"></div>
+        <div id="forecastDisplay"></div>
+    </div>
+
+    <script>
+        // Assuming you have an API key for the weather services
+        const API_KEY = 'YOUR_API_KEY_HERE';
+
+        // Fetch weather data using Fetch API
+        async function fetchWeather(location) {
+            const weatherResponse = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`);
+            const weatherData = await weatherResponse.json();
+            document.getElementById('weatherDisplay').textContent = JSON.stringify(weatherData, null, 2);
+            // Handle local storage update and other logic here...
+        }
+
+        document.getElementById('fetchWeatherBtn').addEventListener('click', () => {
+            const location = document.getElementById('locationInput').value;
+            fetchWeather(location);
+        });
+
+        // Load previously saved location from local storage
+        window.onload = () => {
+            const savedLocation = localStorage.getItem('location');
+            if (savedLocation) {
+                document.getElementById('locationInput').value = savedLocation;
+                fetchWeather(savedLocation);
+            }
+        };
+
+        // Save the location to local storage when fetched
+        function saveLocation(location) {
+            localStorage.setItem('location', location);
+        }
+
+    </script>
+</body>
+
+</html>
+<!-- Steps to Complete the Project: -->
