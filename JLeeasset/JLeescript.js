@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Titles: https://omdbapi.com/?s=thor&page=1&apikey=7b82484f
 // details: http://www.omdbapi.com/?i=tt3896198&apikey=7b82484f
 
@@ -92,3 +93,8 @@ window.addEventListener('click', (event) => {
         searchList.classList.add('hide-search-list');
     }
 });
+=======
+var youtubeApi;
+var ombdApi = http://www.omdbapi.com/?apikey=[yourkey]&;
+
+>>>>>>> cd08c16ed1488b2dbb865fe5b2d6401fa921408e

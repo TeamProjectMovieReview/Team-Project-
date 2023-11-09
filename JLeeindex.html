@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Movie Search Website</title>
     <!-- font awesome icons cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css -->
     <link rel = "stylesheet" href = "./assets/style.css">
+=======
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/style.css">
+>>>>>>> cd08c16ed1488b2dbb865fe5b2d6401fa921408e
 </head>
 <body>
     
@@ -71,7 +76,39 @@
     </div>
 
 
+<<<<<<< HEAD
     <!-- movie app js -->
     <script src = "./assets/script.js"></script>
+=======
+        // Fetch weather data using Fetch API
+        async function fetchWeather(location) {
+            const weatherResponse = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`);
+            const weatherData = await weatherResponse.json();
+            document.getElementById('weatherDisplay').textContent = JSON.stringify(weatherData, null, 2);
+            // Handle local storage update and other logic here...
+        }
+
+        document.getElementById('fetchWeatherBtn').addEventListener('click', () => {
+            const location = document.getElementById('locationInput').value;
+            fetchWeather(location);
+        });
+
+        // Load previously saved location from local storage
+        window.onload = () => {
+            const savedLocation = localStorage.getItem('location');
+            if (savedLocation) {
+                document.getElementById('locationInput').value = savedLocation;
+                fetchWeather(savedLocation);
+            }
+        };
+
+        // Save the location to local storage when fetched
+        function saveLocation(location) {
+            localStorage.setItem('location', location);
+        }
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </script>
+>>>>>>> cd08c16ed1488b2dbb865fe5b2d6401fa921408e
 </body>
 </html>
