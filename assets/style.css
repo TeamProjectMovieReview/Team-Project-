@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.subheading {
+    font-size: 24px;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.media-scroller {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.media-card {
+    flex: 0 0 auto;
+    margin-right: 15px;
+    scroll-snap-align: start;
+    width: 250px;
+}

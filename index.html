@@ -6,48 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <div>
-        <input type="text" id="locationInput" placeholder="Enter your location">
-        <button id="fetchWeatherBtn">Get Weather</button>
-        <div id="weatherDisplay"></div>
-        <div id="forecastDisplay"></div>
+   <!-- Header -->
+<header>
+    <h1>Movie Recommendation App</h1>
+</header>
+
+<!-- Top Movies of 2023 Container -->
+<section class="container">
+    <h2 class="subheading">Top Movies of 2023</h2>
+    <div class="media-scroller">
+        <!-- Cards for top movies -->
+        <div class="media-card">
+            <img src="" alt="Movie 1">
+            <p>Movie Title 1</p>
+        </div>
+        <div class="media-card">
+            <img src="" alt="Movie 2">
+            <p>Movie Title 2</p>
+        </div>
+        <!-- Add more movie cards here -->
     </div>
+</section>
 
-    <script>
-        // Assuming you have an API key for the weather services
-        const API_KEY = 'YOUR_API_KEY_HERE';
+<!-- Your Favorites Container -->
+<section class="container">
+    <h2 class="subheading">Your Favorites</h2>
+    <div class="media-scroller">
+        <div class="media-card">
+            <img src="" alt="Movie 1">
+            <p>Movie Title 1</p>
+        </div>
+        <div class="media-card">
+            <img src="" alt="Movie 2">
+            <p>Movie Title 2</p>
+        </div>
+    </div>
+</section>
 
-        // Fetch weather data using Fetch API
-        async function fetchWeather(location) {
-            const weatherResponse = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`);
-            const weatherData = await weatherResponse.json();
-            document.getElementById('weatherDisplay').textContent = JSON.stringify(weatherData, null, 2);
-            // Handle local storage update and other logic here...
-        }
-
-        document.getElementById('fetchWeatherBtn').addEventListener('click', () => {
-            const location = document.getElementById('locationInput').value;
-            fetchWeather(location);
-        });
-
-        // Load previously saved location from local storage
-        window.onload = () => {
-            const savedLocation = localStorage.getItem('location');
-            if (savedLocation) {
-                document.getElementById('locationInput').value = savedLocation;
-                fetchWeather(savedLocation);
-            }
-        };
-
-        // Save the location to local storage when fetched
-        function saveLocation(location) {
-            localStorage.setItem('location', location);
-        }
+<!-- Movies you would like Container -->
+<section class="container">
+    <h2 class="subheading">Movies you would like</h2>
+    <div class="media-scroller">
+        <div class="media-card">
+            <img src="" alt="Movie 1">
+            <p>Movie Title 1</p>
+        </div>
+        <div class="media-card">
+            <img src="" alt="Movie 2">
+            <p>Movie Title 2</p>
+        </div>
+    </div>
+</section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </script>
 </body>
 
