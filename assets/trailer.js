@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     // Function to parse ISO 8601 duration returned by YouTube API
     function parseDuration(duration) {
@@ -8,7 +9,7 @@ $(document).ready(function() {
         return hours * 3600 + minutes * 60 + seconds;
     }
 
-    // Function to search YouTube for trailers to return a random video ID with a start time
+    // Function to search YouTube for trailers, fetch details, and return a random video ID with a start time
     function searchYouTube(query, apiKey, maxResults) {
         const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&key=${apiKey}&maxResults=${maxResults}&type=video`;
         return $.getJSON(searchUrl).then(data => {
@@ -31,7 +32,15 @@ $(document).ready(function() {
         });
     }
 
-    // Function to create and show the trailer popup
+    
+  $('.movie-title-button').on('click', function() {
+        let movieTitle = $(this).data('movie-title'); /
+        const apiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w'; 
+        searchYouTube(movieTitle + ' trailer', apiKey, 1)
+            .then(data => showTrailerPopup(data.videoId, data.startTime))
+            .fail(error => console.error(error));
+    });
+// Function to create and show the trailer popup
     function showTrailerPopup(videoId, startTime) {
         const iframe = $('<iframe>', {
             width: 560,
@@ -46,20 +55,19 @@ $(document).ready(function() {
         $('#videoContainer').show();
     }
 
-    // Event listener for the show trailer button within a media card
-    $('.showTrailer').on('click', function() {
-        const $mediaCard = $(this).closest('.media-card');
-        const movieTitle = $mediaCard.find('.movie-title').text(); 
+    // Event listener for the show trailer button
+    $('#showTrailer').on('click', function() {
+        // Use a static or dynamic title depending on your needs
+        let movieTitle = 'Inception'; // Replace with dynamic title if needed
         const apiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w'; 
-
         searchYouTube(movieTitle + ' trailer', apiKey, 1)
             .then(data => showTrailerPopup(data.videoId, data.startTime))
             .fail(error => console.error(error));
     });
 
-    // Event listener for the close button of the trailer popup
+
     $('#closePopup').on('click', function() {
         $('#videoContainer').hide();
-        $('#videoPopup').empty();
+        $('#videoPopup').empty(); 
     });
 });
