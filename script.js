@@ -116,11 +116,4 @@ $(document).ready(function() {
         $('#videoContainer').hide();
         $('#videoPopup').empty(); 
     });
-
-    // Search bar functionality 
-    // Add event listener to search button that uses search bar text value 
-    // Use the text value as the searchTerm for fetchMovies 
-    // Populate movies in the search container using data from that search 
-
-
 });
