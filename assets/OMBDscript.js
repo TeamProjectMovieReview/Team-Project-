@@ -14,7 +14,7 @@ $(document).ready(function() {
                     } else {
                         reject('No movies found');
                     }
-                    console.log(data.Search)
+                    // console.log(data.Search)
                 },
             });
         });
