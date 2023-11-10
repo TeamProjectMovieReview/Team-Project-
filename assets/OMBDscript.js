@@ -14,7 +14,7 @@ $(document).ready(function() {
                     } else {
                         reject('No movies found');
                     }
-                    // console.log(data.Search)
+                    console.log(data)
                 },
             });
         });
@@ -42,5 +42,10 @@ $(document).ready(function() {
     fetchMovies('2023')
         .then(function(movies) {
             populateMovies(movies, $('.top-movies .media-scroller'));
+        })
+
+    fetchMovies('Cool')
+        .then(function(movies) {
+            populateMovies(movies, $('.suggested-movies .media-scroller'));
         })
 });
