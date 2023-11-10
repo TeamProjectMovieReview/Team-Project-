@@ -20,6 +20,7 @@ $(document).ready(function() {
         });
     };
 
+
     // Function to populate movies in the container
     var populateMovies = function(movies, container) {
         movies.forEach(function(movie) {
