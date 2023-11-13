@@ -1,0 +1,38 @@
+[33m8ee3ef4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m added trailer.js
+[33mc3fac6d[m added trailer.js
+[33m51e85b3[m[33m ([m[1;31morigin/feature/OMDBAPI[m[33m)[m Merge pull request #19 from TeamProjectMovieReview/feature/OMDBAPI
+[33m3c5769d[m add edited JS
+[33me1eb10d[m Merge pull request #18 from TeamProjectMovieReview/feature/youtube-API-structure
+[33maa9147b[m[33m ([m[1;31morigin/feature/youtube-API-structure[m[33m)[m Merge branch 'main' of github.com:TeamProjectMovieReview/Team-Project-
+[33mec30dc1[m YoutubeAPI skeleton was added
+[33m5048218[m new folder in assets/script2.js for new youtubeAPI
+[33m623bdbf[m Merge pull request #17 from TeamProjectMovieReview/feature/media-cards
+[33m2a938f7[m[33m ([m[1;31morigin/feature/media-cards[m[33m)[m added media card styling and flex
+[33m1c3e9af[m Merge pull request #16 from TeamProjectMovieReview/feature/search-bar
+[33m7898c72[m[33m ([m[1;31morigin/feature/search-bar[m[33m)[m Merge branch 'main' of https://github.com/JohnM89/Team-Project- into feature/search-bar
+[33ma53d159[m added a search bar
+[33m1b11667[m Merge pull request #15 from TeamProjectMovieReview/feature/media-scroller
+[33mcf455bf[m[33m ([m[1;31morigin/feature/media-scroller[m[33m)[m added a horizontal media scroller
+[33m07c551f[m Merge pull request #14 from TeamProjectMovieReview/feature/youtube
+[33m55eb503[m Merge pull request #13 from TeamProjectMovieReview/feature/OMDBAPI
+[33m62623ff[m adding initial JS code
+[33m1857fdd[m Merge pull request #12 from TeamProjectMovieReview/feature/style.v1
+[33m58648d1[m[33m ([m[1;31morigin/feature/style.v1[m[33m)[m Added new styling
+[33md607faf[m[33m ([m[1;31morigin/feature/youtube[m[33m)[m Merge branch 'main' of https://github.com/JohnM89/Team-Project-
+[33m069b48c[m Merge pull request #10 from TeamProjectMovieReview/feature/HTML-structure
+[33ma80436d[m[33m ([m[1;31morigin/feature/HTML-structure[m[33m)[m added basic structure for HTML
+[33m014c381[m Merge branch 'main' of https://github.com/JohnM89/Team-Project-
+[33m6b7123e[m Added YoutubeTemplate.html
+[33mcd08c16[m[33m ([m[1;31morigin/start-structure[m[33m)[m Merge pull request #3 from JohnM89/feature/link-css
+[33m1c317a2[m[33m ([m[1;31morigin/feature/link-css[m[33m)[m Merge branch 'main' of https://github.com/JohnM89/Team-Project- into feature/link-css
+[33me0a9b76[m Merge pull request #2 from JohnM89/feature/init
+[33mc176fb4[m linked ccs and added jQuery
+[33m4b1306a[m initial commit from JLEE
+[33m4a27f42[m Merge pull request #1 from JohnM89/feature/assets-folder
+[33m82cb5f0[m Merge branch 'main' of https://github.com/JohnM89/Team-Project- into feature/assets-folder
+[33mdfe4150[m added a folder with CSS and JS
+[33m713dcde[m Update README.md
+[33m86a364a[m Delete Read Me.txt
+[33m2394659[m[33m ([m[1;32mfeature[m[33m)[m Add my changes
+[33m8275db8[m inital commit
+[33m9e78397[m[33m ([m[1;31morigin/new-feature[m[33m, [m[1;32mnew-feature[m[33m)[m Initial commit
