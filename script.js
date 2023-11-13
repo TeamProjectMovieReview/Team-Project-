@@ -116,5 +116,4 @@ $(document).ready(function() {
         $('#videoContainer').hide();
         $('#videoPopup').empty(); 
     });
-
 });
