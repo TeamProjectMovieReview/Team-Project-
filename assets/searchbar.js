@@ -40,7 +40,7 @@ function displayMovieList(movies){
             <img src = "${moviePoster}">
         </div>
         <div class = "search-item-info">
-            <h3>${movies[idx].Title}</h3>
+            <h2>${movies[idx].Title}</h2>
             <p>${movies[idx].Year}</p>
         </div>
         `;
@@ -66,7 +66,7 @@ function loadMovieDetails(){
 
 function displayMovieDetails(details){
     resultGrid.innerHTML = `
-    <div class = "movie-poster">
+    <div class="movie-poster" style="display: flex;">
         <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster">
     </div>
     <div class = "movie-info">
