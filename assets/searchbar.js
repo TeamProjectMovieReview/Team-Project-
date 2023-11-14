@@ -47,6 +47,9 @@ function displayMovieList(movies){
         searchList.appendChild(movieListItem);
     }
     loadMovieDetails();
+
+// Display the search results container when there is information
+    document.getElementById('results-container').style.display = 'block';
 }
 
 function loadMovieDetails(){

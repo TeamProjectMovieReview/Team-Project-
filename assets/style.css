@@ -282,3 +282,7 @@ aside {
     margin: 1rem 0.7rem 0 0;
 }
 
+
+#results-container{
+    display: none;
+}
