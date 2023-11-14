@@ -40,6 +40,7 @@ $(document).ready(function () {
 
     // Function to create and show the trailer popup
     function showTrailerPopup(videoId, startTime) {
+        console.log(videoId, startTime);
         const iframe = $('<iframe>', {
             width: 560,
             height: 315,
@@ -100,10 +101,21 @@ $(document).ready(function () {
             });
         });
     };
+// Function to shuffle an array
+    function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 
     // Call the fetchMovies function for each section using classes
     fetchMovies('2023')
         .then(function (movies) {
+            // Shuffle the movies array
+            let shuffledMovies = shuffleArray(movies);
             populateMovies(movies, $('.top-movies .media-scroller'));
         })
         .catch(function (error) {
@@ -111,12 +123,15 @@ $(document).ready(function () {
         });
 
     fetchMovies('Cool')
-        .then(function (movies) {
-            populateMovies(movies, $('.suggested-movies .media-scroller'));
-        })
-        .catch(function (error) {
-            console.error(error);
-        });
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.suggested-movies .media-scroller'));
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+
 
     // Close Pop-up function 
     $('#closePopup').on('click', function () {
