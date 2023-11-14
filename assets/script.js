@@ -1,6 +1,10 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+    // Api keys
     var omdbApiKey = '7b82484f';
-    var youtubeApiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w'; 
+    var youtubeApiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w';
+
+    $('aside').hide();
 
     // Function to parse ISO 8601 duration returned by YouTube API
     function parseDuration(duration) {
@@ -46,27 +50,29 @@ $(document).ready(function() {
         });
 
         $('#videoPopup').empty().append(iframe);
-        $('#videoContainer').show();
+        $('aside').show();
+
     }
 
     // Function to populate movies in the container
-    var populateMovies = function(movies, container) {
-        movies.forEach(function(movie) {
+    var populateMovies = function (movies, container) {
+        movies.forEach(function (movie) {
             var title = movie.Title;
             var poster = movie.Poster;
 
-            var movieCard = 
-            `<div class="media-card">
+            var movieCard = `
+            <div class="media-card">
                 <img src="${poster}" alt="${title}">
                 <p>${title}</p>
                 <button class="watch-trailer-button" data-movie-title="${title}">Watch Trailer</button>
+<button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add to Favorites</button>
             </div>`;
 
             container.append(movieCard);
         });
 
         // Attach event listeners to the newly created buttons
-        $('.watch-trailer-button').on('click', function() {
+        $('.watch-trailer-button').on('click', function () {
             let movieTitle = $(this).data('movie-title');
             searchYouTube(movieTitle, 1)
                 .then(data => showTrailerPopup(data.videoId, data.startTime))
@@ -75,20 +81,20 @@ $(document).ready(function() {
     };
 
     // Function to fetch movie data from OMDB API
-    var fetchMovies = function(searchTerm) {
+    var fetchMovies = function (searchTerm) {
         var apiUrl = `https://www.omdbapi.com/?apikey=${omdbApiKey}&s=${searchTerm}`;
 
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
             $.ajax({
                 url: apiUrl,
-                success: function(data) {
+                success: function (data) {
                     if (data.Search) {
                         resolve(data.Search);
                     } else {
                         reject('No movies found');
                     }
                 },
-                error: function() {
+                error: function () {
                     reject('Error fetching data');
                 }
             });
@@ -97,24 +103,72 @@ $(document).ready(function() {
 
     // Call the fetchMovies function for each section using classes
     fetchMovies('2023')
-        .then(function(movies) {
+        .then(function (movies) {
             populateMovies(movies, $('.top-movies .media-scroller'));
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error(error);
         });
 
     fetchMovies('Cool')
-        .then(function(movies) {
+        .then(function (movies) {
             populateMovies(movies, $('.suggested-movies .media-scroller'));
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.error(error);
         });
 
-    $('#closePopup').on('click', function() {
+    $('#closePopup').on('click', function () {
         $('#videoContainer').hide();
-        $('#videoPopup').empty(); 
+        $('#videoPopup').empty();
     });
 
+    function handleFavoriteButtonClick() {
+        $('body').on('click', '.favorite-button', function () {
+            var movieData = $(this).data('movie');
+            var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+            // Check if the movie is already in favorites to prevent duplicates
+            if (!favorites.some(favorite => favorite.imdbID === movieData.imdbID)) {
+                favorites.push(movieData);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+
+                // Add this movie to the favorites section immediately
+                addToFavoritesSection(movieData);
+            }
+        });
+    }
+
+    // Function to add a movie to the favorites section in the DOM
+    function addToFavoritesSection(movie) {
+        var movieCard = `
+    <div class="media-card">
+        <img src="${movie.Poster}" alt="${movie.Title}">
+        <p>${movie.Title}</p>
+    </div>`;
+        $('.favorite-movies .media-scroller').append(movieCard);
+    }
+
+    // Function to load favorites
+    function loadFavorites() {
+        var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        var favoritesContainer = $('.favorite-movies .media-scroller');
+        favoritesContainer.empty();
+
+        // Log the favorites to the console
+        console.log("Saved Favorites:", favorites);
+
+        favorites.forEach(function (movie) {
+            var movieCard = `
+            <div class="media-card">
+                <img src="${movie.Poster}" alt="${movie.Title}">
+                <p>${movie.Title}</p>
+            </div>`;
+            favoritesContainer.append(movieCard);
+        });
+    }
+
+    // Call functions to handle favorites
+    handleFavoriteButtonClick();
+    loadFavorites();
 });
