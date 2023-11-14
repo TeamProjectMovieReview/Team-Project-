@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // Api keys
     var omdbApiKey = '7b82484f';
-    var youtubeApiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w';
+    var youtubeApiKey = 'AIzaSyCqW48cryog9NQLaXZPRd8prjOUo9vyMKs';
 
     $('aside').hide();
 
@@ -118,6 +118,7 @@ $(document).ready(function () {
             console.error(error);
         });
 
+    // Close Pop-up function 
     $('#closePopup').on('click', function () {
         $('#videoContainer').hide();
         $('#videoPopup').empty();
