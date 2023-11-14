@@ -65,7 +65,7 @@ $(document).ready(function () {
                 <img src="${poster}" alt="${title}">
                 <p>${title}</p>
                 <button class="watch-trailer-button" data-movie-title="${title}">Watch Trailer</button>
-<button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add to Favorites</button>
+                <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add to Favorites</button>
             </div>`;
 
             container.append(movieCard);
@@ -142,10 +142,11 @@ $(document).ready(function () {
     // Function to add a movie to the favorites section in the DOM
     function addToFavoritesSection(movie) {
         var movieCard = `
-    <div class="media-card">
-        <img src="${movie.Poster}" alt="${movie.Title}">
-        <p>${movie.Title}</p>
-    </div>`;
+            <div class="media-card">
+                <img src="${movie.Poster}" alt="${movie.Title}">
+                <p>${movie.Title}</p>
+            </div>`;
+
         $('.favorite-movies .media-scroller').append(movieCard);
     }
 
