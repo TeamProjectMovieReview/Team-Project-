@@ -11,6 +11,18 @@ header {
     padding: 20px 0;
 }
 
+aside {
+    display: flex;
+
+    justify-content: center;
+    /* Align children to the start (left side) */
+    align-items: center;
+    /* Center children vertically */
+
+
+}
+
+
 .container {
     max-width: 1200px;
     padding: 20px;
