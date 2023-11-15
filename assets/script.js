@@ -101,14 +101,15 @@ $(document).ready(function () {
             });
         });
     };
-// Function to shuffle an array
-    function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+
+    // Function to shuffle an array
+        function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
     }
-    return array;
-}
 
 
     // Call the fetchMovies function for each section using classes
@@ -153,18 +154,51 @@ $(document).ready(function () {
                 addToFavoritesSection(movieData);
             }
         });
+
+        // Remove from Favorites button
+        $('body').on('click', '.remove-button', function () {
+            var movieId = $(this).data('movie-id');
+            removeFromFavorites(movieId);
+        });
     }
 
     // Function to add a movie to the favorites section in the DOM
     function addToFavoritesSection(movie) {
         var movieCard = `
-            <div class="media-card">
+            <div class="media-card" data-movie-id="${movie.imdbID}">
                 <img src="${movie.Poster}" alt="${movie.Title}">
                 <p>${movie.Title}</p>
+                <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add to Favorites</button>
+                <button class="remove-button" data-movie-id="${movie.imdbID}">Remove from Favorites</button>
             </div>`;
 
         $('.favorite-movies .media-scroller').append(movieCard);
     }
+
+    // Function to remove a movie from the favorites section
+    function removeFromFavorites(movieId) {
+        var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        
+        // Find the index of the movie with the given ID in the favorites array
+        var index = favorites.findIndex(movie => movie.imdbID === movieId);
+        
+        if (index !== -1) {
+            // Remove the movie from the favorites array
+            favorites.splice(index, 1);
+            
+            // Update the local storage
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+        
+            removeMovieFromDOM(movieId);
+        }
+    }
+    
+    // Function to remove movie card
+    function removeMovieFromDOM(movieId) {
+        var cardToRemove = $(`.favorite-movies .media-scroller .media-card[data-movie-id="${movieId}"]`);
+        cardToRemove.remove();
+    }
+    
 
     // Function to load favorites
     function loadFavorites() {
@@ -176,12 +210,7 @@ $(document).ready(function () {
         console.log("Saved Favorites:", favorites);
 
         favorites.forEach(function (movie) {
-            var movieCard = `
-            <div class="media-card">
-                <img src="${movie.Poster}" alt="${movie.Title}">
-                <p>${movie.Title}</p>
-            </div>`;
-            favoritesContainer.append(movieCard);
+            addToFavoritesSection(movie)
         });
     }
 
