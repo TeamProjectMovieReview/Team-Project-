@@ -56,7 +56,7 @@ aside {
 .media-card {
     flex-direction: column;
     align-items: center;
-    flex: 0 0 250px; 
+    flex: 0 0 175px; 
     margin-right: 15px;
     scroll-snap-align: start;
     border: 5px solid #ccc;
@@ -285,4 +285,37 @@ aside {
 
 #results-container{
     display: none;
+}
+
+/* Button styling */
+button {
+    /* padding: 10px 15px; */
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Watch Trailer button */
+.watch-trailer-button {
+    background-color: #3498db;
+    color: #fff;
+    margin: 2px;
+    border-radius: 7px;
+}
+
+/* Add to Favorites button */
+.favorite-button {
+    background-color: #27ae60;
+    color: #fff;
+    margin: 2px;
+    border-radius: 7px;
+}
+
+/* Remove from Favorites button */
+.remove-button {
+    background-color: #e74c3c;
+    color: #fff;
+    margin: 2px;
+    border-radius: 7px;
 }

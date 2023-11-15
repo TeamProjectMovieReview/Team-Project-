@@ -66,7 +66,7 @@ $(document).ready(function () {
                 <img src="${poster}" alt="${title}">
                 <p>${title}</p>
                 <button class="watch-trailer-button" data-movie-title="${title}">Watch Trailer</button>
-                <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add to Favorites</button>
+                <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add ⭐</button>
             </div>`;
 
             container.append(movieCard);
@@ -168,8 +168,8 @@ $(document).ready(function () {
             <div class="media-card" data-movie-id="${movie.imdbID}">
                 <img src="${movie.Poster}" alt="${movie.Title}">
                 <p>${movie.Title}</p>
-                <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add to Favorites</button>
-                <button class="remove-button" data-movie-id="${movie.imdbID}">Remove from Favorites</button>
+                <button class="watch-trailer-button" data-movie-title="${movie.Title}">Watch Trailer</button>
+                <button class="remove-button" data-movie-id="${movie.imdbID}">Remove ⭐</button>
             </div>`;
 
         $('.favorite-movies .media-scroller').append(movieCard);
