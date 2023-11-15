@@ -218,3 +218,104 @@ $(document).ready(function () {
     handleFavoriteButtonClick();
     loadFavorites();
 });
+
+
+const movieSearchBox = document.getElementById('movie-search-box');
+const searchList = document.getElementById('search-list');
+const resultGrid = document.getElementById('result-grid');
+const resultsContainer = document.getElementById('results-container');
+
+// load movies from API
+function loadMovies(searchTerm) {
+    const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=7b82484f`;
+
+    $.ajax({
+        url: URL,
+        method: 'GET',
+        dataType: 'json'
+    })
+    .done((data) => {
+        if (data.Response === "True") {
+            displayMovieList(data.Search);
+        }
+    })
+    .fail((error) => {
+        console.error('Error loading movies:', error);
+    });
+}
+
+function findMovies() {
+    const searchTerm = movieSearchBox.value.trim();
+    searchList.classList.toggle('hide-search-list', searchTerm.length === 0);
+
+    if (searchTerm.length > 0) {
+        loadMovies(searchTerm);
+    }
+}
+
+function displayMovieList(movies) {
+    searchList.innerHTML = movies.map(movie => {
+        const moviePoster = movie.Poster !== "N/A" ? movie.Poster : "image_not_found.png";
+
+        return `
+            <div class="search-list-item" data-id="${movie.imdbID}">
+                <div class="search-item-thumbnail">
+                    <img src="${moviePoster}">
+                </div>
+                <div class="search-item-info">
+                    <h2>${movie.Title}</h2>
+                    <p>${movie.Year}</p>
+                </div>
+            </div>`;
+    }).join('');
+
+    loadMovieDetails();
+    resultsContainer.style.display = 'block';
+}
+
+function loadMovieDetails() {
+    searchList.addEventListener('click', async (event) => {
+        const movie = event.target.closest('.search-list-item');
+
+        if (movie) {
+            searchList.classList.add('hide-search-list');
+            movieSearchBox.value = "";
+
+            try {
+                const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=7b82484f`);
+                const movieDetails = await result.json();
+                displayMovieDetails(movieDetails);
+            } catch (error) {
+                console.error('Error loading movie details:', error);
+            }
+        }
+    });
+}
+
+function displayMovieDetails(details) {
+    resultGrid.innerHTML = `
+        <div class="movie-poster" style="display: flex;">
+            <img src="${details.Poster !== "N/A" ? details.Poster : "image_not_found.png"}" alt="movie poster">
+        </div>
+        <div class="movie-info">
+            <h3 class="movie-title">${details.Title}</h3>
+            <ul class="movie-misc-info">
+                <li class="year">Year: ${details.Year}</li>
+                <li class="rated">Ratings: ${details.Rated}</li>
+                <li class="released">Released: ${details.Released}</li>
+            </ul>
+            <p class="genre"><b>Genre:</b> ${details.Genre}</p>
+            <p class="writer"><b>Writer:</b> ${details.Writer}</p>
+            <p class="actors"><b>Actors: </b>${details.Actors}</p>
+            <p class="plot"><b>Plot:</b> ${details.Plot}</p>
+            <p class="language"><b>Language:</b> ${details.Language}</p>
+            <p class="awards"><b><i class="fas fa-award"></i></b> ${details.Awards}</p>
+        </div>`;
+}
+
+window.addEventListener('click', (event) => {
+    if (event.target.className !== "form-control") {
+        searchList.classList.add('hide-search-list');
+    }
+});
+
