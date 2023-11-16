@@ -1,8 +1,8 @@
     // Api keys
     var omdbApiKey = '7b82484f';
-    var youtubeApiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w';
+    var youtubeApiKey = 'AIzaSyCd2r7TY9q5D4-3SayVQpKcYuM6mkdLdBg';
 
-
+// Populate containers with movies 
 $(document).ready(function () {
 
     // Function to populate movies in the container
@@ -84,7 +84,7 @@ $(document).ready(function () {
     });
 });
 
-// Hide results 
+// Hide movie 
     $('aside').hide();
 
 
@@ -135,14 +135,19 @@ $(document).ready(function () {
 
         $('#videoPopup').empty().append(iframe);
         $('aside').show();
+        $('#closePopup').show();
 
-    }
-
-    // Close Pop-up function 
+        // Close Pop-up function 
     $('#closePopup').on('click', function () {
         $('#videoContainer').hide();
         $('#videoPopup').empty();
+        $('#closePopup').hide();
+        
     });
+
+    }
+
+   
 
     // Adding to favorites function
     function handleFavoriteButtonClick() {
@@ -259,6 +264,7 @@ function loadMovies(searchTerm) {
     });
 }
 
+// Find movies in search 
 function findMovies() {
     const searchTerm = movieSearchBox.value.trim();
     searchList.classList.toggle('hide-search-list', searchTerm.length === 0);
@@ -268,6 +274,7 @@ function findMovies() {
     }
 }
 
+// Show dropdown list for movies searched
 function displayMovieList(movies) {
     searchList.innerHTML = movies.map(movie => {
         const moviePoster = movie.Poster !== "N/A" ? movie.Poster : "image_not_found.png";
@@ -285,9 +292,10 @@ function displayMovieList(movies) {
     }).join('');
 
     loadMovieDetails();
-    resultsContainer.style.display = 'block';
+    
 }
 
+// Load movie details for searched movies
 function loadMovieDetails() {
     searchList.addEventListener('click', async (event) => {
         const movie = event.target.closest('.search-list-item');
@@ -304,6 +312,7 @@ function loadMovieDetails() {
                 console.error('Error loading movie details:', error);
             }
         }
+        resultsContainer.style.display = 'block';
     });
 }
 
@@ -359,6 +368,7 @@ function displayMovieDetails(movie) {
         });
 }
 
+// Hide search results when not in use
 window.addEventListener('click', (event) => {
     if (event.target.className !== "form-control") {
         searchList.classList.add('hide-search-list');
