@@ -1,59 +1,9 @@
-$(document).ready(function () {
-
     // Api keys
     var omdbApiKey = '7b82484f';
-    var youtubeApiKey = 'AIzaSyCqW48cryog9NQLaXZPRd8prjOUo9vyMKs';
+    var youtubeApiKey = 'AIzaSyDPU8IN-u247_xtIkgR5GdC_5ByMJiXW2w';
 
-    $('aside').hide();
 
-    // Function to parse ISO 8601 duration returned by YouTube API
-    function parseDuration(duration) {
-        const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
-        let hours = (parseInt(match[1], 10) || 0);
-        let minutes = (parseInt(match[2], 10) || 0);
-        let seconds = (parseInt(match[3], 10) || 0);
-        return hours * 3600 + minutes * 60 + seconds;
-    }
-
-    // Function to search YouTube for trailers, fetch details, and return a random video ID with a start time
-    function searchYouTube(query, maxResults) {
-        const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)} trailer&key=${youtubeApiKey}&maxResults=${maxResults}&type=video`;
-        return $.getJSON(searchUrl).then(data => {
-            if (data.items.length > 0) {
-                const randomIndex = Math.floor(Math.random() * data.items.length);
-                const videoId = data.items[randomIndex].id.videoId;
-                return $.getJSON(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${youtubeApiKey}`).then(details => {
-                    const duration = details.items[0].contentDetails.duration;
-                    const durationInSeconds = parseDuration(duration);
-                    if (durationInSeconds > 30) {
-                        const startTime = Math.floor(Math.random() * (durationInSeconds - 30));
-                        return { videoId, startTime };
-                    } else {
-                        return $.Deferred().reject("Video is too short for 30-second playback.").promise();
-                    }
-                });
-            } else {
-                return $.Deferred().reject("No trailers found for " + query).promise();
-            }
-        });
-    }
-
-    // Function to create and show the trailer popup
-    function showTrailerPopup(videoId, startTime) {
-        console.log(videoId, startTime);
-        const iframe = $('<iframe>', {
-            width: 560,
-            height: 315,
-            src: `https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1`,
-            frameborder: 0,
-            allow: 'autoplay; encrypted-media',
-            allowfullscreen: true
-        });
-
-        $('#videoPopup').empty().append(iframe);
-        $('aside').show();
-
-    }
+$(document).ready(function () {
 
     // Function to populate movies in the container
     var populateMovies = function (movies, container) {
@@ -132,7 +82,61 @@ $(document).ready(function () {
     .catch(function (error) {
         console.error(error);
     });
+});
 
+// Hide results 
+    $('aside').hide();
+
+
+// YouTube api functionality
+    // Function to parse ISO 8601 duration returned by YouTube API
+    function parseDuration(duration) {
+        const match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+        let hours = (parseInt(match[1], 10) || 0);
+        let minutes = (parseInt(match[2], 10) || 0);
+        let seconds = (parseInt(match[3], 10) || 0);
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    // Function to search YouTube for trailers, fetch details, and return a random video ID with a start time
+    function searchYouTube(query, maxResults) {
+        const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)} trailer&key=${youtubeApiKey}&maxResults=${maxResults}&type=video`;
+        return $.getJSON(searchUrl).then(data => {
+            if (data.items.length > 0) {
+                const randomIndex = Math.floor(Math.random() * data.items.length);
+                const videoId = data.items[randomIndex].id.videoId;
+                return $.getJSON(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${youtubeApiKey}`).then(details => {
+                    const duration = details.items[0].contentDetails.duration;
+                    const durationInSeconds = parseDuration(duration);
+                    if (durationInSeconds > 30) {
+                        const startTime = Math.floor(Math.random() * (durationInSeconds - 30));
+                        return { videoId, startTime };
+                    } else {
+                        return $.Deferred().reject("Video is too short for 30-second playback.").promise();
+                    }
+                });
+            } else {
+                return $.Deferred().reject("No trailers found for " + query).promise();
+            }
+        });
+    }
+
+    // Function to create and show the trailer popup
+    function showTrailerPopup(videoId, startTime) {
+        console.log(videoId, startTime);
+        const iframe = $('<iframe>', {
+            width: 560,
+            height: 315,
+            src: `https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1`,
+            frameborder: 0,
+            allow: 'autoplay; encrypted-media',
+            allowfullscreen: true
+        });
+
+        $('#videoPopup').empty().append(iframe);
+        $('aside').show();
+
+    }
 
     // Close Pop-up function 
     $('#closePopup').on('click', function () {
@@ -140,6 +144,7 @@ $(document).ready(function () {
         $('#videoPopup').empty();
     });
 
+    // Adding to favorites function
     function handleFavoriteButtonClick() {
         $('body').on('click', '.favorite-button', function () {
             var movieData = $(this).data('movie');
@@ -162,6 +167,7 @@ $(document).ready(function () {
         });
     }
 
+
     // Function to add a movie to the favorites section in the DOM
     function addToFavoritesSection(movie) {
         var movieCard = `
@@ -173,6 +179,14 @@ $(document).ready(function () {
             </div>`;
 
         $('.favorite-movies .media-scroller').append(movieCard);
+
+        // Watch trailer button functionality
+        $('.watch-trailer-button').on('click', function () {
+            let movieTitle = $(this).data('movie-title');
+            searchYouTube(movieTitle, 1)
+                .then(data => showTrailerPopup(data.videoId, data.startTime))
+                .fail(error => console.error(error));
+        });
     }
 
     // Function to remove a movie from the favorites section
@@ -217,9 +231,10 @@ $(document).ready(function () {
     // Call functions to handle favorites
     handleFavoriteButtonClick();
     loadFavorites();
-});
 
 
+    
+// Variables for search bar 
 const movieSearchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
@@ -282,7 +297,7 @@ function loadMovieDetails() {
             movieSearchBox.value = "";
 
             try {
-                const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=7b82484f`);
+                const result = await fetch(`https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=7b82484f`);
                 const movieDetails = await result.json();
                 displayMovieDetails(movieDetails);
             } catch (error) {
@@ -325,9 +340,12 @@ function displayMovieDetails(movie) {
         // Add to favorites button functionality 
         $('.watch-trailer-button').on('click', function () {
             let movieTitle = $(this).data('movie-title');
+            console.log(movieTitle, "LOOK")
             searchYouTube(movieTitle, 1)
                 .then(data => showTrailerPopup(data.videoId, data.startTime))
                 .fail(error => console.error(error));
+
+                
         
 
         // Check if the movie is already in favorites to prevent duplicates
