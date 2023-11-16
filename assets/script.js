@@ -72,7 +72,7 @@ $(document).ready(function () {
             container.append(movieCard);
         });
 
-        // Attach event listeners to the newly created buttons
+        // Watch trailer button functionality
         $('.watch-trailer-button').on('click', function () {
             let movieTitle = $(this).data('movie-title');
             searchYouTube(movieTitle, 1)
@@ -292,25 +292,53 @@ function loadMovieDetails() {
     });
 }
 
-function displayMovieDetails(details) {
+// Display movie details for selected movie
+function displayMovieDetails(movie) {
     resultGrid.innerHTML = `
         <div class="movie-poster" style="display: flex;">
-            <img src="${details.Poster !== "N/A" ? details.Poster : "image_not_found.png"}" alt="movie poster">
+            <img src="${movie.Poster !== "N/A" ? movie.Poster : "image_not_found.png"}" alt="movie poster">
         </div>
         <div class="movie-info">
-            <h3 class="movie-title">${details.Title}</h3>
+            <h3 class="movie-title">${movie.Title}</h3>
             <ul class="movie-misc-info">
-                <li class="year">Year: ${details.Year}</li>
-                <li class="rated">Ratings: ${details.Rated}</li>
-                <li class="released">Released: ${details.Released}</li>
+                <li class="year">Year: ${movie.Year}</li>
+                <li class="rated">Ratings: ${movie.Rated}</li>
+                <li class="released">Released: ${movie.Released}</li>
             </ul>
-            <p class="genre"><b>Genre:</b> ${details.Genre}</p>
-            <p class="writer"><b>Writer:</b> ${details.Writer}</p>
-            <p class="actors"><b>Actors: </b>${details.Actors}</p>
-            <p class="plot"><b>Plot:</b> ${details.Plot}</p>
-            <p class="language"><b>Language:</b> ${details.Language}</p>
-            <p class="awards"><b><i class="fas fa-award"></i></b> ${details.Awards}</p>
+            <p class="genre"><b>Genre:</b> ${movie.Genre}</p>
+            <p class="writer"><b>Writer:</b> ${movie.Writer}</p>
+            <p class="actors"><b>Actors: </b>${movie.Actors}</p>
+            <p class="plot"><b>Plot:</b> ${movie.Plot}</p>
+            <p class="language"><b>Language:</b> ${movie.Language}</p>
+            <p class="awards"><b><i class="fas fa-award"></i></b> ${movie.Awards}</p>
+            <button class="watch-trailer-button" data-movie-title="${movie.Title}">Watch Trailer</button>
+            <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add ⭐</button>
         </div>`;
+
+        // Watch trailer button functionality 
+        $('.results-container').on('click', '.watch-trailer-button', function () {
+            let movieTitle = $(this).data('movie-title');
+            searchYouTube(movieTitle, 1)
+                .then(data => showTrailerPopup(data.videoId, data.startTime));
+        });
+
+        // Add to favorites button functionality 
+        $('.watch-trailer-button').on('click', function () {
+            let movieTitle = $(this).data('movie-title');
+            searchYouTube(movieTitle, 1)
+                .then(data => showTrailerPopup(data.videoId, data.startTime))
+                .fail(error => console.error(error));
+        
+
+        // Check if the movie is already in favorites to prevent duplicates
+        if (!favorites.some(favorite => favorite.imdbID === movieData.imdbID)) {
+            favorites.push(movieData);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+
+            // Add this movie to the favorites section immediately
+            addToFavoritesSection(movieData);
+        }
+        });
 }
 
 window.addEventListener('click', (event) => {
