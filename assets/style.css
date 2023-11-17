@@ -5,6 +5,8 @@ body {
     background: #0a0f1d url('./netf.jpg') no-repeat center center fixed; 
     background-size: cover;
     color: #C0C0C0;
+    
+    
 }
 
 header {
@@ -12,7 +14,8 @@ header {
     color: #C0C0C0; /* Light text color */
     text-align: center;
     padding: 20px 0;
-     background: #0a0f1d00 url('./netf.jpg') no-repeat center center fixed; 
+     background: #0a0f1d00 url('./netf.jpg') no-repeat center center fixed;
+      
 }
 
 aside {
