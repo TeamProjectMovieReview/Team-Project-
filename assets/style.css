@@ -39,11 +39,9 @@ aside {
 
 /* Subheadings in containers */
 .subheading {
-   
     font-size: 24px;
     margin-bottom: 15px;
     text-align: center;
-
     padding: 10px;
     border: 2px;
     border-style: solid;
@@ -115,7 +113,7 @@ aside {
 }
 
 .media-card p {
-    background-color: #2b2b2b78;
+    font-size: 18px;
     color: #ccc;
     border-radius: 5px;
     text-align: center;
@@ -331,44 +329,46 @@ aside {
 button {
     /* padding: 10px 15px; */
     margin: 5px;
-    border: none;
+    border: solid 1px black;
     border-radius: 5px;
     cursor: pointer;
 }
 
 /* Watch Trailer button */
 .watch-trailer-button {
-    background-color: #3498db;
+    background-color: gray;
     color: #fff;
-    margin: 2px;
+    margin: 5px;
     border-radius: 7px;
+    width: 125px;
 }
 
 .watch-trailer-button:hover {
-    background-color: #2980b9; /* A slightly darker shade of the original color */
+    background-color: black; /* A slightly darker shade of the original color */
 }
 
 /* Add to Favorites button */
 .favorite-button {
-    background-color: #27ae60;
+    background-color: #1f7c03;
     color: #fff;
-    margin: 2px;
+    margin: 5px;
     border-radius: 7px;
-    
+    width: 125px;
 }
 
 .favorite-button:hover {
-    background-color: #1e8449; /* A slightly darker shade of the original color */
+    background-color: #01461d; /* A slightly darker shade of the original color */
 }
 
 /* Remove from Favorites button */
 .remove-button {
-    background-color: #e74c3c;
+    background-color: #dd1009;
     color: #fff;
-    margin: 2px;
+    margin: 5px;
     border-radius: 7px;
+    width: 125px;
 }
 
 .remove-button:hover {
-    background-color: #c0392b; /* A slightly darker shade of the original color */
+    background-color: #7e0b07; /* A slightly darker shade of the original color */
 }
