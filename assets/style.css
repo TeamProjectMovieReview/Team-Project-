@@ -1,14 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
+    background: #0a0f1d url('./netf.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #C0C0C0;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #2b2b2b; /* Dark gray for header */
+    color: #C0C0C0; /* Light text color */
     text-align: center;
     padding: 20px 0;
+     background: #0a0f1d00 url('./netf.jpg') no-repeat center center fixed; 
 }
 
 aside {
@@ -20,22 +24,32 @@ aside {
 }
 
 .container {
+    border: 1px solid transparent;
+    background-image: linear-gradient(#161616, #161616), linear-gradient(to right, #B02020, #C0C0C0, #B02020);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     max-width: 1200px;
     padding: 20px;
-    background-color: gray;
-    margin: 20px;
+    margin: 20px auto;
     border-radius: 10px;
+    background: #4d0606c6;
+    box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.5);
 }
+
 
 /* Subheadings in containers */
 .subheading {
+   
     font-size: 24px;
     margin-bottom: 15px;
-    background-color: #333;
-    color: white;
     text-align: center;
+
     padding: 10px;
     border-radius: 7px;
+     background: #2b2b2b78;
+     background: #0a0f1d4e url('./netf.jpg') no-repeat center center fixed; 
+    text-shadow: 0px 1px 1px #000; /* Text shadow for depth */
+    color: #ffffff; /* Adjusting text color for better visibility */
 }
 
 /* Media scoller */
@@ -43,8 +57,9 @@ aside {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: thin; /* Maintain the scrollbar */
+    scrollbar-width: thin;
 }
+
 
 /* Media cards */
 .media-card {
@@ -53,11 +68,19 @@ aside {
     flex: 0 0 175px; 
     margin-right: 15px;
     scroll-snap-align: start;
-    border: 5px solid #ccc;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+     background: #760909d6; /* Darker background for media card */
+    box-shadow: 0 0 8px 0 rgba(255, 0, 0, 0.6); /* Red glowing effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 100; /* Higher z-index for overlay */
+    position: relative; /* Required for z-index to take effect */
+    overflow: hidden; /* Hide any overflow */
 }
-
+.media-card:hover {
+    box-shadow: 0 0 15px 0 rgba(255, 0, 0, 0.75); /* Brighter red glow on hover */
+    transform: translateY(-5px); /* Slight raise effect */
+}
 .media-card img {
     max-width: 100%; 
     max-height: 200px; 
@@ -72,7 +95,10 @@ aside {
     text-align: center;
     flex: 1;
 }
-
+.media-card:hover {
+    box-shadow: 0 0 15px 0 rgba(81, 203, 238, 0.75);
+    transform: translateY(-5px);
+}
 /* Search Bar Styling */
 .search-element {
     justify-content: center;
@@ -293,12 +319,21 @@ button {
     border-radius: 7px;
 }
 
+.watch-trailer-button:hover {
+    background-color: #2980b9; /* A slightly darker shade of the original color */
+}
+
 /* Add to Favorites button */
 .favorite-button {
     background-color: #27ae60;
     color: #fff;
     margin: 2px;
     border-radius: 7px;
+    
+}
+
+.favorite-button:hover {
+    background-color: #1e8449; /* A slightly darker shade of the original color */
 }
 
 /* Remove from Favorites button */
@@ -307,4 +342,8 @@ button {
     color: #fff;
     margin: 2px;
     border-radius: 7px;
+}
+
+.remove-button:hover {
+    background-color: #c0392b; /* A slightly darker shade of the original color */
 }
