@@ -1,12 +1,18 @@
 # Project by Group 2: 
 
-## Movie Recommendation Application
+# Movie Recommendation Application
+
+![Bootstrap](https://img.shields.io/badge/FrontendFrameworks-Bootstrap-blueviolet)
+![JQuery](https://img.shields.io/badge/JavascriptUILibraries-JQuery-red)
+![HTML/CSS](https://img.shields.io/badge/StructureStyle-HTML/CSS-green)
+![JAVASCRIPT](https://img.shields.io/badge/Function-JavaScript-magenta)
+![API](https://img.shields.io/badge/API-Youtube-fcba03)
+![API](https://img.shields.io/badge/API-OMDb-indigo)
 
 ![screenshot_2023-11-16_at_20-22-56_movie_recommendations](https://github.com/TeamProjectMovieReview/Team-Project-/assets/143357899/7e251e3f-b239-4cc1-8f7a-8df9265c3785)
-Live URL: [https://teamprojectmoviereview.github.io/Team-Project-]
+[Live URL of deployed website](https://teamprojectmoviereview.github.io/Team-Project-)
 
-
-## Introduction
+# Introduction
 ```
 This is our movie trailer platform.
 
@@ -33,7 +39,7 @@ It’s like a free show where you can access as many captivating and user engagi
 you may possibly desire.
 ```
 
-## Motivation for development
+# Motivation for development
 
 ```
 We created this project because of the increase in the current movie market and to create a user
@@ -58,7 +64,7 @@ requirements, we’ve been able to integrate high quality content for users and 
 exactly what they are looking for.
 ```
 
-## User Story
+# User Story
 
 ```
 Being the movie enthusiasts that we are, we were aiming to create a website that makes it easier for
@@ -71,7 +77,7 @@ for my chosen trailers, allowing me to save and revisit at my own discretion. It
 explore endless movies, many unheard of, all while keeping the website engaging.
 ```
 
-## Project Requirements
+# Project Requirements
 
 ```
 You and your group will use everything you’ve learned over the past six modules to create a
@@ -93,7 +99,7 @@ but your project must fulfil the following requirements:
 * Have a quality README (unique name, description, technologies, screenshot, and deployed application).
 ```
 
-## Presentation Requirements
+# Presentation Requirements
 
 ```
 Use this [project presentation template]
@@ -110,41 +116,33 @@ to address the following:
 * Links to the deployed application and the GitHub repository
 ```
 
-## Technologies used 
+
+# Technologies used 
 
 
-## Source Information
-```
-1. Bootstrap
- "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
- "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js";
- "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css";
- "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-```
-```   
-2. JQuery
- "https://code.jquery.com/jquery-3.4.1.min.js";
- "https://code.jquery.com/jquery-3.6.0.min.js";
- "https://code.jquery.com/jquery-3.7.1.min.js";
-```
-```   
-3. Youtube API
- "https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)} trailer&key=${apiKey}&maxResults=${maxResults}&type=video";
- "https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${apiKey}";
- "https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1";
-```
-```
-4. OMDb API
- "https://www.omdbapi.com/?apikey=${omdbApiKey}&s=${searchTerm}";
- "https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=7b82484f";
- "https://omdbapi.com/?s=${searchTerm}&page=1&apikey=7b82484";
-```
-```
-5. Google Fonts
- "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap";
-```
-```
-6. API Keys
- omdbApiKey = '7b82484f';
- youtubeApiKey = 'AIzaSyCd2r7TY9q5D4-3SayVQpKcYuM6mkdLdBg';
-```
+# Source Information
+
+1. ![Bootstrap](https://img.shields.io/badge/FrontendFrameworks-Bootstrap-blueviolet)
+<br />(https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css)
+<br />(https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js)
+<br />(https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css)
+<br />(https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js)
+
+2. ![JQuery](https://img.shields.io/badge/JavascriptUILibraries-JQuery-red)
+<br />(https://code.jquery.com/jquery-3.4.1.min.js)
+<br />(https://code.jquery.com/jquery-3.6.0.min.js)
+<br />(https://code.jquery.com/jquery-3.7.1.min.js)
+
+3. ![APIKEY](https://img.shields.io/badge/APIKEY-Youtube-fcba03) = AIzaSyCd2r7TY9q5D4-3SayVQpKcYuM6mkdLdBg
+<br />(https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)} trailer&key=${apiKey}&maxResults=${maxResults}&type=video)
+<br />(https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${apiKey})
+<br />(https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1)
+
+4. ![APIKEY](https://img.shields.io/badge/APIKEY-OMDb-indigo) = 7b82484f
+<br />(https://www.omdbapi.com/?apikey=${omdbApiKey}&s=${searchTerm})
+<br />(https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=7b82484f)
+<br />(https://omdbapi.com/?s=${searchTerm}&page=1&apikey=7b82484f)
+
+5. ![GoogleFont](https://img.shields.io/badge/Font-GoogleAPI-purple)
+<br />(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap")
+
