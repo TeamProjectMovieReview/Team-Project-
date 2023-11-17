@@ -72,12 +72,85 @@ $(document).ready(function () {
         .catch(function (error) {
             console.error(error);
         });
+        
 
     fetchMovies('Cool')
     .then(function (movies) {
         // Shuffle the movies array
         let shuffledMovies = shuffleArray(movies);
         populateMovies(shuffledMovies, $('.suggested-movies .media-scroller'));
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+     fetchMovies('Action')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.action-movies .media-scroller'));
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+     fetchMovies('Comedy')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.comedy-movies .media-scroller'));
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+     fetchMovies('Horror')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.horror-movies .media-scroller'));
+    })
+    .catch(function (error) {
+        console.error(error);
+    });
+     fetchMovies('Documentary')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.documentary-movies .media-scroller'));
+    })
+      fetchMovies('2022')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.2022-movies .media-scroller'));
+    })
+      fetchMovies('2021')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.2021-movies .media-scroller'));
+    })
+      fetchMovies('2020')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.2020-movies .media-scroller'));
+    })
+       fetchMovies('Thriller')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.thriller-movies .media-scroller'));
+    })
+       fetchMovies('Science Fiction')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.scifi-movies .media-scroller'));
+    })
+       fetchMovies('Romance')
+    .then(function (movies) {
+        // Shuffle the movies array
+        let shuffledMovies = shuffleArray(movies);
+        populateMovies(shuffledMovies, $('.Romance-movies .media-scroller'));
     })
     .catch(function (error) {
         console.error(error);
