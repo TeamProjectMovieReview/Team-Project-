@@ -312,7 +312,7 @@ function loadMovieDetails() {
                 console.error('Error loading movie details:', error);
             }
         }
-        resultsContainer.style.display = 'block';
+        
     });
 }
 
@@ -338,6 +338,9 @@ function displayMovieDetails(movie) {
             <button class="watch-trailer-button" data-movie-title="${movie.Title}">Watch Trailer</button>
             <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add ⭐</button>
         </div>`;
+
+        // Disply results container
+        resultsContainer.style.display = 'block';
 
         // Watch trailer button functionality 
         $('.results-container').on('click', '.watch-trailer-button', function () {

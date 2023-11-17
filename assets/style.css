@@ -46,8 +46,7 @@ aside {
 
     padding: 10px;
     border-radius: 7px;
-     background: #2b2b2b78;
-     background: #0a0f1d4e url('./netf.jpg') no-repeat center center fixed; 
+    background: #2b2b2b78; 
     text-shadow: 0px 1px 1px #000; /* Text shadow for depth */
     color: #ffffff; /* Adjusting text color for better visibility */
 }
@@ -63,6 +62,8 @@ aside {
 
 /* Media cards */
 .media-card {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     flex: 0 0 175px; 
@@ -89,11 +90,11 @@ aside {
 }
 
 .media-card p {
-    background-color: #333;
+    background-color: #2b2b2b78;
     color: #ccc;
     border-radius: 5px;
     text-align: center;
-    flex: 1;
+    flex: 0 1;
 }
 .media-card:hover {
     box-shadow: 0 0 15px 0 rgba(81, 203, 238, 0.75);
@@ -117,7 +118,7 @@ aside {
 .search-element button {
     padding: 8px 15px;
     margin: auto;
-    background-color: #333;
+    background-color: #4d0606c6;
     color: white;
     border: none;
     border-radius: 5px;
@@ -169,7 +170,6 @@ aside {
     z-index: 10;
 }
 .search-list .search-list-item {
-    background-color: #33363D;
     padding: 0.5rem;
     border-bottom: 1px solid black;
     width: calc(350px - 8px);
@@ -180,7 +180,7 @@ aside {
     transition: background-color 200ms ease;
 }
 .search-list .search-list-item:Hover {
-    background-color: #1f1f1f;
+    background-color: #4d0606c6;
 }
 .search-list-item {
     display: -webkit-box;
