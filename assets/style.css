@@ -32,7 +32,7 @@ aside {
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
-    background: #4d0606c6;
+    background: #4d060654;
     box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.5);
 }
 
@@ -45,8 +45,11 @@ aside {
     text-align: center;
 
     padding: 10px;
-    border-radius: 7px;
-    background: #2b2b2b78; 
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    background: #4d0606c6; 
     text-shadow: 0px 1px 1px #000; /* Text shadow for depth */
     color: #ffffff; /* Adjusting text color for better visibility */
 }
@@ -59,6 +62,27 @@ aside {
     scrollbar-width: thin;
 }
 
+.media-scroller::-webkit-scrollbar {
+    width: 5px;
+}
+
+.media-scroller::-webkit-scrollbar-thumb {
+    background-color: #760909d6;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.media-scroller::-webkit-scrollbar-track {
+    background-color: #2b2b2b78;
+    border-radius: 10px;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+
 
 /* Media cards */
 .media-card {
@@ -67,21 +91,22 @@ aside {
     flex-direction: column;
     align-items: center;
     flex: 0 0 175px; 
-    margin-right: 15px;
+    margin: 15px 5px;
     scroll-snap-align: start;
+    margin-right: 15px;
     padding: 10px;
-    border-radius: 10px;
-     background: #760909d6; /* Darker background for media card */
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    background: #760909d6; /* Darker background for media card */
     box-shadow: 0 0 8px 0 rgba(255, 0, 0, 0.6); /* Red glowing effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 100; /* Higher z-index for overlay */
     position: relative; /* Required for z-index to take effect */
     overflow: hidden; /* Hide any overflow */
 }
-.media-card:hover {
-    box-shadow: 0 0 15px 0 rgba(255, 0, 0, 0.75); /* Brighter red glow on hover */
-    transform: translateY(-5px); /* Slight raise effect */
-}
+
 .media-card img {
     max-width: 100%; 
     max-height: 200px; 
@@ -97,7 +122,7 @@ aside {
     flex: 0 1;
 }
 .media-card:hover {
-    box-shadow: 0 0 15px 0 rgba(81, 203, 238, 0.75);
+    box-shadow: 0 0 15px 0 rgba(238, 170, 81, 0.75);
     transform: translateY(-5px);
 }
 /* Search Bar Styling */
