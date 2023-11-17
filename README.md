@@ -9,8 +9,9 @@
 ![API](https://img.shields.io/badge/API-Youtube-fcba03)
 ![API](https://img.shields.io/badge/API-OMDb-indigo)
 
-![screenshot_2023-11-16_at_20-22-56_movie_recommendations](https://github.com/TeamProjectMovieReview/Team-Project-/assets/143357899/7e251e3f-b239-4cc1-8f7a-8df9265c3785)
-[Live URL of deployed website](https://teamprojectmoviereview.github.io/Team-Project-)
+![image](https://github.com/TeamProjectMovieReview/Team-Project-/assets/143357899/a9e53f48-1584-4cee-baa3-e133a93e56ee)
+<br />
+[Live URL of Movie Recommendation Application](https://teamprojectmoviereview.github.io/Team-Project-)
 
 # Introduction
 ```
