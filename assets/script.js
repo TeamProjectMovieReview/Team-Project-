@@ -1,6 +1,6 @@
     // Api keys
     var omdbApiKey = '7b82484f';
-    var youtubeApiKey = 'AIzaSyCd2r7TY9q5D4-3SayVQpKcYuM6mkdLdBg';
+    var youtubeApiKey = 'AIzaSyCqW48cryog9NQLaXZPRd8prjOUo9vyMKs';
 
 // Populate containers with movies 
 $(document).ready(function () {
@@ -28,6 +28,7 @@ $(document).ready(function () {
             searchYouTube(movieTitle, 1)
                 .then(data => showTrailerPopup(data.videoId, data.startTime))
                 .fail(error => console.error(error));
+                
         });
     };
 
@@ -209,6 +210,15 @@ $(document).ready(function () {
         $('#videoPopup').empty().append(iframe);
         $('aside').show();
         $('#closePopup').show();
+
+         $('html, body').animate({
+        scrollTop: $("aside").offset().top
+    }, 1000); // Change 1000 to the duration in milliseconds for the scrolling animation
+        
+
+        
+        
+       
 
         // Close Pop-up function 
     $('#closePopup').on('click', function () {
