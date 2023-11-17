@@ -375,3 +375,24 @@ button {
 .remove-button:hover {
     background-color: #7e0b07; /* A slightly darker shade of the original color */
 }
+
+#videoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#closePopup {
+    margin: 5px; /* Adjust as needed for spacing */
+    background-color: #1f7c03;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    width: 125px;
+    border: solid 1px black;
+    padding: 5px;
+}
+
+#closePopup:hover {
+    background-color: #01461d; /* A slightly darker shade of the original color */
+}
