@@ -408,15 +408,15 @@ function displayMovieDetails(movie) {
         <div class="movie-info">
             <h3 class="movie-title">${movie.Title}</h3>
             <ul class="movie-misc-info">
-                <li class="year">Year: ${movie.Year}</li>
-                <li class="rated">Ratings: ${movie.Rated}</li>
-                <li class="released">Released: ${movie.Released}</li>
+                <li class="year"> ${movie.Year}</li>
+                <li class="rated"> Rated ${movie.Rated}</li>
+                <li class="released"> Release Date: ${movie.Released}</li>
             </ul>
-            <p class="genre"><b>Genre:</b> ${movie.Genre}</p>
-            <p class="writer"><b>Writer:</b> ${movie.Writer}</p>
-            <p class="actors"><b>Actors: </b>${movie.Actors}</p>
-            <p class="plot"><b>Plot:</b> ${movie.Plot}</p>
-            <p class="language"><b>Language:</b> ${movie.Language}</p>
+            <p class="genre"><b>Genre: </b> ${movie.Genre}</p>
+            <p class="director"><b>Director: </b> ${movie.Director}</p>
+            <p class="stars"><b>Stars: </b>${movie.Actors}</p>
+            <p class="plot"><b>Plot: </b> ${movie.Plot}</p>
+            <p class="language"><b>Language: </b> ${movie.Language}</p>
             <p class="awards"><b><i class="fas fa-award"></i></b> ${movie.Awards}</p>
             <button class="watch-trailer-button" data-movie-title="${movie.Title}">Watch Trailer</button>
             <button class="favorite-button" data-movie='${JSON.stringify(movie)}'>Add ⭐</button>
