@@ -384,7 +384,7 @@ button {
 
 #closePopup {
     margin: 5px; /* Adjust as needed for spacing */
-    background-color: #1f7c03;
+    background-color: gray;
     color: #fff;
     border: none;
     border-radius: 7px;
@@ -394,5 +394,5 @@ button {
 }
 
 #closePopup:hover {
-    background-color: #01461d; /* A slightly darker shade of the original color */
+    background-color: black; /* A slightly darker shade of the original color */
 }
