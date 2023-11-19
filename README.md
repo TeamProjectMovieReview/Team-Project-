@@ -1,10 +1,12 @@
 ## ⭐ Group 2 Project - Movie Recommendation Application ⭐ 
+<a id="top"></a>
 
-![Bootstrap](https://img.shields.io/badge/CSSFrameworks-Bootstrap-blueviolet)
-![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)
-![HTML/CSS](https://img.shields.io/badge/Structure&Style-HTML/CSS-green)
-![Youtube/OMDb](https://img.shields.io/badge/ServerSideAPIs-Youtube/OMDb-fcba03)
-![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)
+[![Bootstrap](https://img.shields.io/badge/CSSFrameworks-Bootstrap-blueviolet)](#Bootstrap)
+[![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)](#JQuery)
+[![HTML/CSS](https://img.shields.io/badge/Structure&Style-HTML/CSS-green)](#HTML/CSS)
+[![Youtube/OMDb](https://img.shields.io/badge/ServerSideAPIs-Youtube/OMDb-fcba03)](#OMBD)
+[![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)](#JSON)
+
 
 ![image](https://github.com/TeamProjectMovieReview/Team-Project-/assets/143357899/a9e53f48-1584-4cee-baa3-e133a93e56ee)
 <br />
@@ -78,6 +80,7 @@ section for my chosen trailers, allowing me to save and revisit at my own discre
 
 It enables me to easily explore endless movies, many unheard of, all while keeping the website engaging.
 ```
+<br>[↑ Back to Top](#top)</br>
 
 ## Project Requirements
 
@@ -116,9 +119,10 @@ to address the following:
 * Directions for Future Development
 * Links to the deployed application and the GitHub repository
 
-
+<br>[↑ Back to Top](#top)</br>
 ## Technologies & Sources used for the project
 
+<a id="HTML/CSS"></a>
 ![HTML](https://img.shields.io/badge/Structure-HTML-green)
 <br /> &ensp;(1) The structure of the document is defined using HTML5 elements
 <br /> &ensp;(2) Iframes: the source pointing to embed YouTube videos for movie trailers.
@@ -142,6 +146,7 @@ to address the following:
 <br />
 <br />
 
+<a id="JQuery"></a>
 ![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)
 <br /> &ensp;(1) The code extensively uses jQuery for DOM manipulation, AJAX requests, and event handling.
 <br /> &emsp;(a) Promises: are used for handling asynchronous operations, such as AJAX requests.
@@ -153,6 +158,7 @@ to address the following:
 <br />
 <br />
 
+<a id="Bootstrap"></a>
 ![Bootstrap](https://img.shields.io/badge/CSSFrameworks-Bootstrap-blueviolet) 
 <br /> &ensp;via a CDN link:
 <br /> &ensp;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
@@ -160,6 +166,7 @@ to address the following:
 <br />
 <br />
 
+<a id="YOUTUBE"></a>
 ![APIKEY](https://img.shields.io/badge/ServerSideAPIs-Youtube-fcba03)
 <br /> &ensp;The code interacts with the Open Movie Database (OMDb) API to fetch movie data.
 <br /> &ensp;https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}
@@ -168,6 +175,7 @@ to address the following:
 <br />
 <br />
 
+<a id="OMBD"></a>
 ![APIKEY](https://img.shields.io/badge/ServerSideAPIs-OMDb-fcba03)
 <br /> &ensp;The code uses the YouTube API to search for movie trailers and fetch details.
 <br /> &ensp;https://www.omdbapi.com/?apikey=${omdbApiKey}&s=${searchTerm}
@@ -176,10 +184,11 @@ to address the following:
 <br />
 <br />
 
+<a id="JSON"></a>
 ![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)
 <br /> &ensp;Local Storage.Stringfy: browser's localStorage to store and retrieve favorite movies.
 <br />
-<br />
+<br />[↑ Back to Top](#top)
 
 ## Directions for Future Development
 
@@ -208,5 +217,5 @@ Overall there’s potential for this website to grow in multiple directions that
 one at a time.
 
 This website is a great starter and as members of his team we are very proud to present our website!
-
+<br>[↑ Back to Top](#top)</br>
 
