@@ -1,10 +1,12 @@
 ## ⭐ Group 2 Project - Movie Recommendation Application ⭐ 
+<a id="top"></a>
 
-![Bootstrap](https://img.shields.io/badge/CSSFrameworks-Bootstrap-blueviolet)
-![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)
-![HTML/CSS](https://img.shields.io/badge/Structure&Style-HTML/CSS-green)
-![Youtube/OMDb](https://img.shields.io/badge/ServerSideAPIs-Youtube/OMDb-fcba03)
-![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)
+[![Bootstrap](https://img.shields.io/badge/CSSFrameworks-Bootstrap-blueviolet)](#Bootstrap)
+[![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)](#JQuery)
+[![HTML/CSS](https://img.shields.io/badge/Structure&Style-HTML/CSS-green)](#HTML/CSS)
+[![Youtube/OMDb](https://img.shields.io/badge/ServerSideAPIs-Youtube/OMDb-fcba03)](#OMBD)
+[![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)](#JSON)
+
 
 ![image](https://github.com/TeamProjectMovieReview/Team-Project-/assets/143357899/a9e53f48-1584-4cee-baa3-e133a93e56ee)
 <br />
@@ -14,7 +16,9 @@
 <br />
 
 
-## Introduction
+<details open>
+<summary>## Introduction</summary>
+
 ```
 This is our movie trailer platform.
 
@@ -43,7 +47,13 @@ It’s like a free show where you can access as many captivating and user engagi
 you may possibly desire.
 ```
 
-## Motivation for development
+
+</details>
+
+<details open>
+<summary>## Motivation for development</summary>
+
+
 ```
 We created this project because of the increase in the current movie market and to create a user
 friendly environment to help individuals to browse trailers and choose specific movies they would prefer.
@@ -67,7 +77,13 @@ requirements, we’ve been able to integrate high quality content for users and 
 what they are looking for.
 ```
 
-## User Story
+
+</details>
+
+<details open>
+<summary>## User Story</summary>
+
+
 ```
 Being the movie enthusiasts that we are, we were aiming to create a website that makes it easier for
 us to view and easily navigate through an extensive collection of movies to pick and chose.
@@ -78,8 +94,12 @@ section for my chosen trailers, allowing me to save and revisit at my own discre
 
 It enables me to easily explore endless movies, many unheard of, all while keeping the website engaging.
 ```
+<br>[↑ Back to Top](#top)</br>
 
-## Project Requirements
+</details>
+
+<details open>
+<summary>## Project Requirements</summary>
 
 You and your group will use everything you’ve learned over the past six modules to create a real-world
 front-end application that you’ll be able to showcase to potential employers.
@@ -101,7 +121,10 @@ fulfil the following requirements:
 * Have a quality README (unique name, description, technologies, screenshot, and deployed application).
 
 
-## Presentation of the Project 
+</details>
+
+<details open>
+<summary>## Presentation of the Project</summary> 
 
 Group 2 Presentation of Project [Movie Recommendation Website]
 [https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing](https://docs.google.com/presentation/d/1joHsI0JIZWYRWBveIRM8Qj2hoRFw-oNhHvMKiCAOZcM/edit#slide=id.g29f43f0a72_0_15)
@@ -116,9 +139,12 @@ to address the following:
 * Directions for Future Development
 * Links to the deployed application and the GitHub repository
 
+<br>[↑ Back to Top](#top)</br>
+</details>
+<details open>
+<summary>## Technologies & Sources used for the project</summary>
 
-## Technologies & Sources used for the project
-
+<a id="HTML/CSS"></a>
 ![HTML](https://img.shields.io/badge/Structure-HTML-green)
 <br /> &ensp;(1) The structure of the document is defined using HTML5 elements
 <br /> &ensp;(2) Iframes: the source pointing to embed YouTube videos for movie trailers.
@@ -142,6 +168,7 @@ to address the following:
 <br />
 <br />
 
+<a id="JQuery"></a>
 ![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)
 <br /> &ensp;(1) The code extensively uses jQuery for DOM manipulation, AJAX requests, and event handling.
 <br /> &emsp;(a) Promises: are used for handling asynchronous operations, such as AJAX requests.
@@ -153,13 +180,15 @@ to address the following:
 <br />
 <br />
 
+<a id="Bootstrap"></a>
 ![Bootstrap](https://img.shields.io/badge/CSSFrameworks-Bootstrap-blueviolet) 
 <br /> &ensp;via a CDN link:
 <br /> &ensp;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
 <br /> &ensp;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js
 <br />
-<br />
 
+
+<a id="YOUTUBE"></a>
 ![APIKEY](https://img.shields.io/badge/ServerSideAPIs-Youtube-fcba03)
 <br /> &ensp;The code interacts with the Open Movie Database (OMDb) API to fetch movie data.
 <br /> &ensp;https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}
@@ -168,6 +197,7 @@ to address the following:
 <br />
 <br />
 
+<a id="OMBD"></a>
 ![APIKEY](https://img.shields.io/badge/ServerSideAPIs-OMDb-fcba03)
 <br /> &ensp;The code uses the YouTube API to search for movie trailers and fetch details.
 <br /> &ensp;https://www.omdbapi.com/?apikey=${omdbApiKey}&s=${searchTerm}
@@ -176,12 +206,15 @@ to address the following:
 <br />
 <br />
 
+<a id="JSON"></a>
 ![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)
 <br /> &ensp;Local Storage.Stringfy: browser's localStorage to store and retrieve favorite movies.
 <br />
 <br />
+</details>
 
-## Directions for Future Development
+<details open>
+<summary>## Directions for Future Development</summary>
 
 An aspect for future development is to add watch history to allow users to be able to find a possible
 movie that they may have “lost”. 
@@ -208,5 +241,7 @@ Overall there’s potential for this website to grow in multiple directions that
 one at a time.
 
 This website is a great starter and as members of his team we are very proud to present our website!
+<br>[↑ Back to Top](#top)</br>
+</details>
 
 
