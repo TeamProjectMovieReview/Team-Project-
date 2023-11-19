@@ -16,7 +16,9 @@
 <br />
 
 
-## Introduction
+<details open>
+<summary>## Introduction</summary>
+
 ```
 This is our movie trailer platform.
 
@@ -45,7 +47,13 @@ It’s like a free show where you can access as many captivating and user engagi
 you may possibly desire.
 ```
 
-## Motivation for development
+
+</details>
+
+<details open>
+<summary>## Motivation for development</summary>
+
+
 ```
 We created this project because of the increase in the current movie market and to create a user
 friendly environment to help individuals to browse trailers and choose specific movies they would prefer.
@@ -69,7 +77,13 @@ requirements, we’ve been able to integrate high quality content for users and 
 what they are looking for.
 ```
 
-## User Story
+
+</details>
+
+<details open>
+<summary>## User Story</summary>
+
+
 ```
 Being the movie enthusiasts that we are, we were aiming to create a website that makes it easier for
 us to view and easily navigate through an extensive collection of movies to pick and chose.
@@ -82,7 +96,10 @@ It enables me to easily explore endless movies, many unheard of, all while keepi
 ```
 <br>[↑ Back to Top](#top)</br>
 
-## Project Requirements
+</details>
+
+<details open>
+<summary>## Project Requirements</summary>
 
 You and your group will use everything you’ve learned over the past six modules to create a real-world
 front-end application that you’ll be able to showcase to potential employers.
@@ -104,7 +121,10 @@ fulfil the following requirements:
 * Have a quality README (unique name, description, technologies, screenshot, and deployed application).
 
 
-## Presentation of the Project 
+</details>
+
+<details open>
+<summary>## Presentation of the Project</summary> 
 
 Group 2 Presentation of Project [Movie Recommendation Website]
 [https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing](https://docs.google.com/presentation/d/1joHsI0JIZWYRWBveIRM8Qj2hoRFw-oNhHvMKiCAOZcM/edit#slide=id.g29f43f0a72_0_15)
@@ -120,7 +140,9 @@ to address the following:
 * Links to the deployed application and the GitHub repository
 
 <br>[↑ Back to Top](#top)</br>
-## Technologies & Sources used for the project
+</details>
+<details open>
+<summary>## Technologies & Sources used for the project</summary>
 
 <a id="HTML/CSS"></a>
 ![HTML](https://img.shields.io/badge/Structure-HTML-green)
@@ -164,7 +186,7 @@ to address the following:
 <br /> &ensp;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js
 <br /> &ensp;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js
 <br />
-<br />
+
 
 <a id="YOUTUBE"></a>
 ![APIKEY](https://img.shields.io/badge/ServerSideAPIs-Youtube-fcba03)
@@ -188,9 +210,11 @@ to address the following:
 ![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)
 <br /> &ensp;Local Storage.Stringfy: browser's localStorage to store and retrieve favorite movies.
 <br />
-<br />[↑ Back to Top](#top)
+<br />
+</details>
 
-## Directions for Future Development
+<details open>
+<summary>## Directions for Future Development</summary>
 
 An aspect for future development is to add watch history to allow users to be able to find a possible
 movie that they may have “lost”. 
@@ -218,4 +242,6 @@ one at a time.
 
 This website is a great starter and as members of his team we are very proud to present our website!
 <br>[↑ Back to Top](#top)</br>
+</details>
+
 
