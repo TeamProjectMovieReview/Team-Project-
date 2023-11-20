@@ -26,7 +26,7 @@ This is our movie trailer platform.
 This is where you can be the next potential movie critic and enthusiast.
 
 Our users get to view more movie trailers they can possibly comprehend to find the next perfect movie
-for them. Using and integrating Youtube API and ODMP API, you get access from blockbuster films
+for them. Using and integrating Youtube API and OMDB API, you get access from blockbuster films
 to hidden gems to movies 20 years old and beyond.
 
 What makes us unique and different from other sources is that you’re not just a viewer but you’re
