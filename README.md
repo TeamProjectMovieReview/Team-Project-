@@ -17,7 +17,8 @@
 
 
 <details open>
-<summary>## Introduction</summary>
+<summary> Introduction </summary> <br />
+  
 
 ```
 This is our movie trailer platform.
@@ -51,7 +52,7 @@ you may possibly desire.
 </details>
 
 <details open>
-<summary>## Motivation for development</summary>
+<summary> Motivation for development </summary> <br />
 
 
 ```
@@ -81,7 +82,7 @@ what they are looking for.
 </details>
 
 <details open>
-<summary>## User Story</summary>
+<summary> User Story </summary> <br />
 
 
 ```
@@ -94,18 +95,20 @@ section for my chosen trailers, allowing me to save and revisit at my own discre
 
 It enables me to easily explore endless movies, many unheard of, all while keeping the website engaging.
 ```
-<br>[↑ Back to Top](#top)</br>
+<br />[↑ Back to Top](#top)</br><br />
 
 </details>
 
 <details open>
-<summary>## Project Requirements</summary>
+<summary> Project Requirements </summary> <br />
 
+```
 You and your group will use everything you’ve learned over the past six modules to create a real-world
 front-end application that you’ll be able to showcase to potential employers.
 
 The user story and acceptance criteria will depend on the project that you create, but your project must
 fulfil the following requirements:
+```
 
 * Use a CSS framework other than Bootstrap.
 * Be deployed to GitHub Pages.
@@ -123,32 +126,33 @@ fulfil the following requirements:
 
 </details>
 
-<details open>
-<summary>## Presentation of the Project</summary> 
+<br />
+<br />
 
-Group 2 Presentation of Project [Movie Recommendation Website]
+<details open>
+<summary> Presentation of the Project </summary> <br />
+
+Group 2 Presentation of Project: [Movie Recommendation Website]
 [https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing](https://docs.google.com/presentation/d/1joHsI0JIZWYRWBveIRM8Qj2hoRFw-oNhHvMKiCAOZcM/edit#slide=id.g29f43f0a72_0_15)
 
 to address the following: 
-
 * Elevator pitch: a one minute description of your application
 * Concept: What is your user story? What was your motivation for development?
 * Process: What were the technologies used? How were tasks and roles broken down and assigned?
-  What challenges did you encounter? What were your successes?
+  <br /> &ensp; What challenges did you encounter? What were your successes?
 * Demo: Show your stuff!
 * Directions for Future Development
 * Links to the deployed application and the GitHub repository
 
-<br>[↑ Back to Top](#top)</br>
+<br />[↑ Back to Top](#top)</br><br />
 </details>
 <details open>
-<summary>## Technologies & Sources used for the project</summary>
+<summary> Technologies & Sources used for the project </summary> </br>
 
 <a id="HTML/CSS"></a>
 ![HTML](https://img.shields.io/badge/Structure-HTML-green)
 <br /> &ensp;(1) The structure of the document is defined using HTML5 elements
 <br /> &ensp;(2) Iframes: the source pointing to embed YouTube videos for movie trailers.
-<br />
 <br />
 
 ![CSS](https://img.shields.io/badge/Style-CSS-green)
@@ -156,7 +160,7 @@ to address the following:
 <br /> &ensp;(2) Flex Direction: to control the direction of the flex container's main axis.
 <br /> &ensp;(3) Hover Effects: to add transitions and style changes on hover
 <br /> &ensp;(4) Scrollbar Styling: to custom styles applied to scrollbar elements by using:
-<br /> &emsp;    webkit-scrollbar, webkit-scrollbar-thumb, and webkit-scrollbar-track pseudo-elements.
+<br /> &emsp;&emsp;    (a) webkit-scrollbar, webkit-scrollbar-thumb, and webkit-scrollbar-track pseudo-elements.
 <br /> &ensp;(5) Transition Effects: applied for smooth animation effects in certain interactions.
 <br /> &ensp;(6) Positioning: to use positioning elements, and z-index to control the stacking order of elements.
 <br /> &ensp;(7) Cursor Styles: to change the cursor style on buttons.
@@ -166,18 +170,16 @@ to address the following:
 <br /> &ensp;https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css
 <br /> &ensp;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css
 <br />
-<br />
 
 <a id="JQuery"></a>
 ![JQuery](https://img.shields.io/badge/JavaScriptUILibrary-JQuery-red)
 <br /> &ensp;(1) The code extensively uses jQuery for DOM manipulation, AJAX requests, and event handling.
-<br /> &emsp;(a) Promises: are used for handling asynchronous operations, such as AJAX requests.
-<br /> &emsp;(b) Scroll Animation: using jQuery to smoothly scroll to a specific element.
-<br /> &emsp;(c) Event listeners: to handle various user interactions, such as button clicks/search bar actions.
+<br /> &emsp;&emsp;(a) Promises: used for handling asynchronous operations, such as AJAX requests.
+<br /> &emsp;&emsp;(b) Scroll Animation: using jQuery to smoothly scroll to a specific element.
+<br /> &emsp;&emsp;(c) Event listeners: to handle various user interactions, such as button clicks/search bar actions.
 <br /> &ensp;https://code.jquery.com/jquery-3.4.1.min.js
 <br /> &ensp;https://code.jquery.com/jquery-3.6.0.min.js
 <br /> &ensp;https://code.jquery.com/jquery-3.7.1.min.js
-<br />
 <br />
 
 <a id="Bootstrap"></a>
@@ -187,14 +189,12 @@ to address the following:
 <br /> &ensp;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js
 <br />
 
-
 <a id="YOUTUBE"></a>
 ![APIKEY](https://img.shields.io/badge/ServerSideAPIs-Youtube-fcba03)
 <br /> &ensp;The code interacts with the Open Movie Database (OMDb) API to fetch movie data.
 <br /> &ensp;https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}
 <br /> &ensp;https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=contentDetails&key=${apiKey}
 <br /> &ensp;https://www.youtube.com/embed/${videoId}?start=${startTime}&autoplay=1
-<br />
 <br />
 
 <a id="OMBD"></a>
@@ -204,18 +204,20 @@ to address the following:
 <br /> &ensp;https://www.omdbapi.com/?i=${movie.dataset.id}&apikey=7b82484f
 <br /> &ensp;https://omdbapi.com/?s=${searchTerm}&page=1&apikey=7b82484f
 <br />
-<br />
 
 <a id="JSON"></a>
 ![JSON](https://img.shields.io/badge/LocalStorage-JSON-magenta)
 <br /> &ensp;Local Storage.Stringfy: browser's localStorage to store and retrieve favorite movies.
 <br />
-<br />
 </details>
+<br />
+
 
 <details open>
-<summary>## Directions for Future Development</summary>
+<summary> Directions for Future Development </summary> <br />
 
+  
+```
 An aspect for future development is to add watch history to allow users to be able to find a possible
 movie that they may have “lost”. 
 
@@ -239,9 +241,3 @@ websites on multiple social platform.
 
 Overall there’s potential for this website to grow in multiple directions that will have to be tackled
 one at a time.
-
-This website is a great starter and as members of his team we are very proud to present our website!
-<br>[↑ Back to Top](#top)</br>
-</details>
-
-
